@@ -15,35 +15,27 @@ function maysc(cadena) {
 
 function titulo(cadena) {
 	let palabras = cadena.split(' ');
-	let palabrasFinal = [];
-	palabras.forEach((palabra) => {
-		palabra = palabra.charAt(0).toLocaleUpperCase() + palabra.slice(1);
-		palabrasFinal.push(palabra);
-	})
-	return palabrasFinal.join(' ');
+	palabras = palabras.map(palabra => palabra.charAt(0).toLocaleUpperCase() + palabra.slice(1));
+	return palabras.join(' ');
 }
 
 function letrasReves(cadena) {
 	let letras = cadena.split('');
-	let letrasReversas = letras.reverse();
-	return letrasReversas.join('');
+	letras = letras.reverse();
+	return letras.join('');
 }
 
 function palabrasReves(cadena) {
-	let arrayPalabras = cadena.split(' ');
-	let palabrasFinal = [];
-	arrayPalabras.forEach((palabra) => {
-		palabrasFinal.push(palabra);
-	})
-	palabrasFinal = palabrasFinal.reverse();
-	return palabrasFinal.join(' ');
+	let palabras = cadena.split(' ');
+	palabras = palabras.reverse();
+	palabras = palabras.join(' ');
+	return palabras;
 }
 
 function palindromo(cadena) {
-	let cadenaMinusculas = cadena.toLocaleLowerCase();
-	cadenaMinusculas = cadenaMinusculas.replaceAll(" ", "");
-	let cadenaInvertida = letrasReves(cadenaMinusculas);
-	return cadenaMinusculas == cadenaInvertida;
+	cadena = cadena.toLocaleLowerCase();
+	cadena = cadena.replaceAll(' ', '');
+	return cadena == letrasReves(cadena);
 }
 
 module.exports = {
