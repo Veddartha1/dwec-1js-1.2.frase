@@ -10,5 +10,8 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^8.19.2"
+  }
 }
