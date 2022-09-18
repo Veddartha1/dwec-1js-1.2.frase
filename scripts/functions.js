@@ -5,8 +5,7 @@ function letras(cadena) {
 }
 
 function palabras(cadena) {
-	let palabras = cadena.split(' ');
-	return palabras.length;
+	return cadena.split(' ').length;
 }
 
 function maysc(cadena) {
@@ -14,27 +13,21 @@ function maysc(cadena) {
 }
 
 function titulo(cadena) {
-	let palabras = cadena.split(' ');
-	palabras = palabras.map(palabra => palabra.charAt(0).toLocaleUpperCase() + palabra.slice(1));
-	return palabras.join(' ');
+	cadena = cadena.split(' ');
+	cadena = cadena.map(palabra => palabra.charAt(0).toLocaleUpperCase() + palabra.slice(1));
+	return cadena.join(' ');
 }
 
 function letrasReves(cadena) {
-	let letras = cadena.split('');
-	letras = letras.reverse();
-	return letras.join('');
+	return cadena.split('').reverse().join('');
 }
 
 function palabrasReves(cadena) {
-	let palabras = cadena.split(' ');
-	palabras = palabras.reverse();
-	palabras = palabras.join(' ');
-	return palabras;
+	return cadena.split(' ').reverse().join(' ');
 }
 
 function palindromo(cadena) {
-	cadena = cadena.toLocaleLowerCase();
-	cadena = cadena.replaceAll(' ', '');
+	cadena = cadena.toLocaleLowerCase().replaceAll(' ', '');
 	return cadena == letrasReves(cadena);
 }
 
